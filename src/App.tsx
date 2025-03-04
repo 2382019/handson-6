@@ -14,6 +14,10 @@ import ProductDetail from "./pages/ProductDetail";
 import Home from "./pages/Home";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
+import Comments from "./pages/Comments";
+import AddComments from "./pages/AddComments";
+import DetailComments from "./pages/DetailComments";
+
 
 const queryClient = new QueryClient()
 
@@ -31,6 +35,9 @@ function App() {
 			<Route path="/recipes/:id/edit" element={<EditRecipes/>} />
 			<Route path="/posts/add" element={<AddPost/>} />
 			<Route path="/posts/:id" element={<DetailPost/>} />
+			<Route path="comments" element={<Comments/>} />
+			<Route path="/comments/add" element={<AddComments/>} />
+			<Route path="/comments/:id" element={<DetailComments/>} />
 			<Route path="posts" element={<Post />} />
 			<Route path="carts" element={<Carts />} />
 		</Route>
