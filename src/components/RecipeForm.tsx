@@ -78,18 +78,18 @@ const RecipeForm: React.FC<RecipeFormElementProps> = (props) => {
   };
 
   return (
-    <form className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-300" onSubmit={handleSubmit(onSubmit)}>
-      <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">{props.isEdit ? "Edit Recipe" : "Add New Recipe"}</h2>
+    <form className="max-w-lg mx-auto bg-white p-10 rounded-2xl shadow-md border border-gray-200" onSubmit={handleSubmit(onSubmit)}>
+      <h2 className="text-3xl font-bold text-gray-900 mb-6 text-left">{props.isEdit ? "Edit Recipe" : "Add New Recipe"}</h2>
       
-      <div className="space-y-4">
+      <div className="space-y-5">
         <div>
-          <label className="block text-gray-700 font-semibold" htmlFor="name">Recipe Name</label>
-          <input className="w-full p-3 rounded-lg border border-gray-300 focus:ring focus:ring-blue-400" type="text" id="name" {...register('name', { required: "Name is required." })} />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+          <label className="block text-gray-700 font-semibold text-left" htmlFor="name">Recipe Name</label>
+          <input className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400" type="text" id="name" {...register('name', { required: "Name is required." })} />
+          {errors.name && <p className="text-red-500 text-sm text-left">{errors.name.message}</p>}
         </div>
       
         <div>
-          <label className="block text-gray-700 font-semibold">Ingredients</label>
+          <label className="block text-gray-700 font-semibold text-left">Ingredients</label>
           <div className="grid grid-cols-2 gap-2 mt-2">
             {ingredientOptions.map((ingredient) => (
               <label key={ingredient} className="flex items-center space-x-2">
@@ -101,37 +101,17 @@ const RecipeForm: React.FC<RecipeFormElementProps> = (props) => {
         </div>
       
         <div>
-          <label className="block text-gray-700 font-semibold">Instructions</label>
+          <label className="block text-gray-700 font-semibold text-left">Instructions</label>
           {instructions.map((instruction, index) => (
             <div key={index} className="flex space-x-2 mt-2">
-              <input className="w-full p-3 rounded-lg border border-gray-300 focus:ring focus:ring-blue-400" type="text" value={instruction} onChange={(e) => handleInstructionChange(index, e.target.value)} placeholder={`Step ${index + 1}`} />
-              <button type="button" className="bg-red-500 text-white p-2 rounded-lg" onClick={() => removeInstruction(index)}>✕</button>
+              <input className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400" type="text" value={instruction} onChange={(e) => handleInstructionChange(index, e.target.value)} placeholder={`Step ${index + 1}`} />
+              <button type="button" className="bg-red-500 text-white p-2 rounded-lg hover:bg-red-700" onClick={() => removeInstruction(index)}>✕</button>
             </div>
           ))}
-          <button type="button" className="mt-2 bg-green-500 text-white px-4 py-2 rounded-lg" onClick={addInstruction}>+ Add Step</button>
+          <button type="button" className="mt-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700" onClick={addInstruction}>+ Add Step</button>
         </div>
       
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-gray-700 font-semibold" htmlFor="prepTimeMinutes">Prep Time (mins)</label>
-            <input className="w-full p-3 rounded-lg border border-gray-300 focus:ring focus:ring-blue-400" type="number" id="prepTimeMinutes" {...register('prepTimeMinutes', { required: "Required." })} />
-          </div>
-          <div>
-            <label className="block text-gray-700 font-semibold" htmlFor="cookTimeMinutes">Cook Time (mins)</label>
-            <input className="w-full p-3 rounded-lg border border-gray-300 focus:ring focus:ring-blue-400" type="number" id="cookTimeMinutes" {...register('cookTimeMinutes', { required: "Required." })} />
-          </div>
-        </div>
-      
-        <div>
-          <label className="block text-gray-700 font-semibold" htmlFor="difficulty">Difficulty</label>
-          <select className="w-full p-3 rounded-lg border border-gray-300 focus:ring focus:ring-blue-400" id="difficulty" {...register('difficulty', { required: "Required." })}>
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-          </select>
-        </div>
-      
-        <button type="submit" className="w-full mt-4 bg-blue-600 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all">
+        <button type="submit" className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all">
           {props.isEdit ? "Save Changes" : "Add Recipe"}
         </button>
       </div>
