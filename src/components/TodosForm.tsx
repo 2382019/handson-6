@@ -23,7 +23,7 @@ const TodosForm: React.FC<TodosFormProps> = ({ isEdit, mutateFn }) => {
       return;
     }
 
-    mutateFn({ title, completed: false, userId: 1 }); // Sesuaikan userId dengan autentikasi
+    mutateFn({ title, completed: false, userId: 1 }); 
     setTitle("");
     setErrorMessage("");
   };
@@ -31,7 +31,7 @@ const TodosForm: React.FC<TodosFormProps> = ({ isEdit, mutateFn }) => {
   return (
     <div className="w-full max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
-        {isEdit ? "Edit Todo" : "Tambah Todo"}
+        {isEdit ? "Edit Todo" : ""}
       </h2>
 
       {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
@@ -40,16 +40,16 @@ const TodosForm: React.FC<TodosFormProps> = ({ isEdit, mutateFn }) => {
         <input
           type="text"
           className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Tulis todo Anda..."
+          placeholder="Create your new todo"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
 
         <button
           type="submit"
-          className="mt-4 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-all"
+          className="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-all"
         >
-          {isEdit ? "Simpan Perubahan" : "Tambah Todo"}
+          {isEdit ? "Simpan Perubahan" : "Add Todo"}
         </button>
       </form>
     </div>

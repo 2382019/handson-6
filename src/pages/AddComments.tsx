@@ -50,7 +50,7 @@ const AddComment = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-1">User ID</label>
+          <label className="block text-gray-700 font-medium mb-1">Post ID</label>
           <input
             type="number"
             value={postId}
@@ -73,7 +73,7 @@ const AddComment = () => {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition duration-300"
+          className="w-full bg-green-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition duration-300"
         >
           {isPending ? "Adding..." : "Add Comment"}
         </button>

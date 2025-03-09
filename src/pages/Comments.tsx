@@ -46,7 +46,7 @@ const Comments = () => {
     return (
       <div className="flex items-center justify-center min-h-screen p-4">
         <div className="text-center">
-          <h2 className="text-xl font-bold text-gray-700 mb-6">Loading comments...</h2>
+          <h2 className="text-2xl font-bold text-gray-700 mb-6">Loading comments...</h2>
           <CommentSkeleton />
           <CommentSkeleton />
           <CommentSkeleton />
@@ -59,7 +59,7 @@ const Comments = () => {
     return (
       <div className="flex items-center justify-center min-h-screen p-4">
         <div className="text-center">
-          <h2 className="text-xl font-bold text-red-600 mb-6">Error fetching comments:</h2>
+          <h2 className="text-2xl font-bold text-red-600 mb-6">Error fetching comments:</h2>
           <p>{error instanceof Error ? error.message : "Unknown error"}</p>
         </div>
       </div>
@@ -67,23 +67,23 @@ const Comments = () => {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
-      <div className="w-full max-w-4xl">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-gray-50">
+      <div className="w-full max-w-2xl bg-white shadow-md rounded-lg p-6">
         <h1 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Comments</h1>
         <div className="space-y-8">
           {data?.data.comments.map((comment) => (
             <div
               key={comment.id}
-              className="flex space-x-6 cursor-pointer hover:bg-gray-100 p-4 rounded-lg shadow-lg transition-all"
+              className="flex space-x-4 cursor-pointer hover:bg-gray-100 transition-all rounded-lg p-4 shadow-sm"
               onClick={() => handleCommentClick(comment.id)}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
               </svg>
               <div className="flex-1">
-                <h2 className="text-2xl font-semibold text-gray-800">{comment.user.fullName}</h2>
-                <p className="text-gray-600 mt-2">{comment.body.slice(0, 100)}...</p>
-                <div className="flex justify-between items-center mt-4 text-gray-600">
+                <h2 className="text-xl font-semibold text-gray-800">{comment.user.fullName}</h2>
+                <p className="text-gray-600 mt-1">{comment.body.slice(0, 100)}...</p>
+                <div className="flex justify-between items-center mt-2 text-gray-600">
                   <span>{comment.likes} Likes</span>
                 </div>
               </div>
@@ -93,7 +93,7 @@ const Comments = () => {
       </div>
 
       <button 
-        className="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full p-4 shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
         onClick={() => navigate("./add")}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

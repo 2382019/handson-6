@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import TodosForm, { TodoData } from "../components/TodosForm";
 
-// Function to send todo to backend
 const addTodo = async (data: TodoData) => {
   return await axios.post("/todos/add", data);
 };

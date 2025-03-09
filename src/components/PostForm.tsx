@@ -77,7 +77,7 @@ const PostForm: React.FC<PostFormElementProps> = ({ isEdit, mutateFn, defaultInp
       </div>
       
       <div>
-        <label className="block text-gray-700 font-semibold mb-1" htmlFor="tags">Tags (comma separated)</label>
+        <label className="block text-gray-700 font-semibold mb-1" htmlFor="tags">Tags</label>
         <Textarea className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400" id="tags" {...register('tags', { required: "Tags are required." })} />
         {errors.tags && <p className="text-red-500 text-sm mt-1">{errors.tags.message}</p>}
       </div>

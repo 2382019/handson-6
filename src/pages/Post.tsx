@@ -22,12 +22,12 @@ interface PostList {
   posts: Post[];
 }
 
-// Fungsi untuk mengambil data pos dari API
+// Function to fetch posts from the API
 const fetchPostList = async () => {
   return await axios.get<PostList>("/post");
 };
 
-// Komponen Skeleton Loader (Menampilkan loading state)
+// Skeleton Loader Component
 const PostSkeleton = () => {
   return (
     <div className="space-y-4 animate-pulse">
@@ -38,7 +38,7 @@ const PostSkeleton = () => {
   );
 };
 
-// Komponen utama Post
+// Main Post Component
 const Post = () => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["Post"],
@@ -46,7 +46,7 @@ const Post = () => {
   });
   const navigate = useNavigate();
 
-  // Fungsi untuk menangani klik pos dan mengarahkan ke halaman detail
+  // Handle post click event
   const handlePostClick = (postId: number) => {
     navigate(`/post/${postId}`);
   };
@@ -83,14 +83,10 @@ const Post = () => {
           {data?.data.posts.map((post) => (
             <div
               key={post.id}
-              className="flex space-x-6 cursor-pointer hover:bg-gray-100 p-4 rounded-lg shadow-lg transition-all"
+              className="bg-white shadow-lg rounded-lg p-4 transition-all transform hover:scale-105 cursor-pointer"
               onClick={() => handlePostClick(post.id)}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              </svg>
-
-              <div className="flex-1">
+              <div className="flex flex-col">
                 <h2 className="text-2xl font-semibold text-gray-800">{post.title}</h2>
                 <p className="text-gray-600 mt-2">{post.body.slice(0, 100)}...</p>
                 <div className="flex flex-wrap mt-4">
@@ -113,7 +109,6 @@ const Post = () => {
         </div>
       </div>
 
-      {/* Tombol tambah post */}
       <button 
         className="fixed bottom-4 right-4 bg-blue-500 text-white rounded-full p-4 shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         onClick={() => navigate("./add")}

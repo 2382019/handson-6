@@ -29,7 +29,7 @@ const EditTodo = () => {
   const { data: todo, isLoading, isError } = useQuery({
     queryKey: ["todoDetail", id],
     queryFn: () => fetchTodoDetail(id),
-    enabled: !!id, // Mencegah fetch jika id undefined
+    enabled: !!id, 
   });
 
   const [todoText, setTodoText] = useState("");
@@ -92,9 +92,9 @@ const EditTodo = () => {
         <div className="flex justify-center gap-4 mt-4">
           <button
             onClick={() => updateMutation.mutate({ todo: todoText, completed })}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:scale-105 transition"
+            className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow hover:scale-105 transition"
           >
-            💾 Save
+            Save
           </button>
           <button
             onClick={() => {
@@ -102,9 +102,9 @@ const EditTodo = () => {
                 deleteMutation.mutate();
               }
             }}
-            className="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:scale-105 transition"
+            className="bg-red-400 text-white px-4 py-2 rounded-lg shadow hover:scale-105 transition"
           >
-            ❌ Delete
+            Delete
           </button>
         </div>
       </div>

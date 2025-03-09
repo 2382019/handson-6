@@ -30,7 +30,7 @@ const EditRecipes = () => {
   }, [editRecipeMutation.isSuccess]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-green-100 to-green-300">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-300">
       {(editRecipeMutation.isPending || getRecipeDetail.isFetching) && (
         <div className="absolute inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center">
           <div className="flex items-center bg-white px-6 py-3 rounded-lg shadow-lg animate-fadeIn">
@@ -58,9 +58,8 @@ const EditRecipes = () => {
           </div>
         </div>
       )}
-
+  
       <div className="w-full max-w-lg bg-white p-8 rounded-xl shadow-xl">
-       
         <RecipeForm
           isEdit={true}
           mutateFn={editRecipeMutation.mutate}
@@ -69,6 +68,6 @@ const EditRecipes = () => {
       </div>
     </div>
   );
-};
+}
 
 export default EditRecipes;
