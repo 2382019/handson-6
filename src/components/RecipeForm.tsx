@@ -78,7 +78,7 @@ const RecipeForm: React.FC<RecipeFormElementProps> = (props) => {
   };
 
   return (
-    <form className="max-w-lg mx-auto bg-gray-100 p-6 rounded-lg shadow-md border border-gray-400" onSubmit={handleSubmit(onSubmit)}>
+    <form className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md border border-white" onSubmit={handleSubmit(onSubmit)}>
       <h2 className="text-3xl font-semibold text-center text-gray-800 mb-5">{props.isEdit ? "Update Recipe" : "Create New Recipe"}</h2>
       
       <div className="space-y-5">
@@ -105,7 +105,7 @@ const RecipeForm: React.FC<RecipeFormElementProps> = (props) => {
           {instructions.map((instruction, index) => (
             <div key={index} className="flex space-x-2 mt-2">
               <input className="w-full p-2 rounded-md border border-gray-300 focus:ring focus:ring-blue-500" type="text" value={instruction} onChange={(e) => handleInstructionChange(index, e.target.value)} placeholder={`Step ${index + 1}`} />
-              <button type="button" className="bg-red-600 text-white p-2 rounded-md" onClick={() => removeInstruction(index)}>✖</button>
+              <button type="button" className="bg-white text-white p-2 rounded-md" onClick={() => removeInstruction(index)}>✖</button>
             </div>
           ))}
           <button type="button" className="mt-2 bg-green-600 text-white px-4 py-2 rounded-md" onClick={addInstruction}>+ Add Step</button>

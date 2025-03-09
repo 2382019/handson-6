@@ -58,11 +58,11 @@ const fetchRecipesList = async () => {
 const RecipesSkeleton = () => {
   return (
     <div className="group relative border rounded-lg overflow-hidden shadow-lg animate-pulse">
-      <div className="aspect-square w-full bg-gray-200"></div>
+      <div className="aspect-square w-full bg-white"></div>
       <div className="p-4">
-        <div className="h-5 bg-gray-200 rounded w-3/4"></div>
-        <div className="mt-2 h-4 bg-gray-200 rounded w-1/2"></div>
-        <div className="mt-2 h-3 bg-gray-200 rounded w-1/4"></div>
+        <div className="h-5 bg-white rounded w-3/4"></div>
+        <div className="mt-2 h-4 bg-white rounded w-1/2"></div>
+        <div className="mt-2 h-3 bg-white rounded w-1/4"></div>
       </div>
     </div>
   );

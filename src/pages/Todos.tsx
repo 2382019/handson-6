@@ -37,6 +37,13 @@ const Todos = () => {
     navigate(`/todos/${todoId}/edit`);
   };
 
+  const toggleTodoCompletion = async (todo: Todo) => {
+    // Call API to toggle the completion status
+    const updatedTodo = { ...todo, completed: !todo.completed };
+    await axios.put(`/todos/${todo.id}`, updatedTodo);
+    // You may want to refetch the todos after update
+  };
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen p-4">
@@ -64,14 +71,24 @@ const Todos = () => {
   return (
     <div className="flex items-center justify-center min-h-screen p-4">
       <div className="w-full max-w-4xl">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Todo List</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">Todo List</h1>
         <div className="space-y-6">
           {data?.data.todos.map((todo) => (
             <div
               key={todo.id}
               className="flex items-center justify-between cursor-pointer hover:bg-gray-100 p-4 rounded-lg shadow-lg transition-all"
-              onClick={() => handleTodoClick(todo.id)}
+              // Prevent navigation on checkbox click
+              onClick={(e) => {
+                if (e.target instanceof HTMLInputElement) return;
+                handleTodoClick(todo.id);
+              }}
             >
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => toggleTodoCompletion(todo)}
+                className="mr-4"
+              />
               <div className="flex-1">
                 <h2 className="text-2xl font-semibold text-gray-800">{todo.todo}</h2>
                 <p className={`mt-2 ${todo.completed ? "text-green-600" : "text-red-600"}`}>

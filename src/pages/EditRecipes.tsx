@@ -30,7 +30,7 @@ const EditRecipes = () => {
   }, [editRecipeMutation.isSuccess]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-300">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-white to-white">
       {(editRecipeMutation.isPending || getRecipeDetail.isFetching) && (
         <div className="absolute inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center">
           <div className="flex items-center bg-white px-6 py-3 rounded-lg shadow-lg animate-fadeIn">

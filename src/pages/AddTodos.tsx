@@ -22,7 +22,7 @@ const AddTodos = () => {
   }, [isSuccess]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-100 to-indigo-300">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br">
       {isPending && (
         <div className="absolute inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center">
           <div className="flex items-center bg-white px-6 py-3 rounded-lg shadow-lg animate-fadeIn">
@@ -52,7 +52,7 @@ const AddTodos = () => {
       )}
 
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-xl">
-        <h2 className="text-3xl font-bold text-center text-gray-700">Add Todo</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-700">Create A New Todo</h2>
         <TodosForm isEdit={false} mutateFn={mutate} />
       </div>
     </div>

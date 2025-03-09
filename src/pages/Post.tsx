@@ -22,12 +22,10 @@ interface PostList {
   posts: Post[];
 }
 
-// Function to fetch posts from the API
 const fetchPostList = async () => {
   return await axios.get<PostList>("/post");
 };
 
-// Skeleton Loader Component
 const PostSkeleton = () => {
   return (
     <div className="space-y-4 animate-pulse">
@@ -38,7 +36,6 @@ const PostSkeleton = () => {
   );
 };
 
-// Main Post Component
 const Post = () => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["Post"],
@@ -46,7 +43,6 @@ const Post = () => {
   });
   const navigate = useNavigate();
 
-  // Handle post click event
   const handlePostClick = (postId: number) => {
     navigate(`/post/${postId}`);
   };
@@ -78,7 +74,7 @@ const Post = () => {
   return (
     <div className="flex items-center justify-center min-h-screen p-4">
       <div className="w-full max-w-4xl">
-        <h1 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Post List</h1>
+        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">Post List</h1>
         <div className="space-y-8">
           {data?.data.posts.map((post) => (
             <div

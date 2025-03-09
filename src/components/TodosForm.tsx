@@ -40,14 +40,13 @@ const TodosForm: React.FC<TodosFormProps> = ({ isEdit, mutateFn }) => {
         <input
           type="text"
           className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          placeholder="Create your new todo"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
 
         <button
           type="submit"
-          className="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-all"
+          className="mt-4 w-full bg-green-500 text-white py-2 rounded-lg hover:bg-gray-300 transition-all"
         >
           {isEdit ? "Simpan Perubahan" : "Add Todo"}
         </button>

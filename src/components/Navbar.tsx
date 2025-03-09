@@ -10,7 +10,6 @@ const navigation = [
 	{ name: 'Todos', to: '/todos', current: false},
 ]
 
-
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')
 }
@@ -19,14 +18,14 @@ const Navbar = () => {
 	const navigate = useNavigate();
 
 	return (
-		<Disclosure as="nav" className="bg-[#403D94]">
+		<Disclosure as="nav" className="bg-[#10818176]"> {/* background color */}
 			<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 				<div className="relative flex h-16 items-center justify-between">
 					<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
 
-					<Menu as="div" className="relative ml-3 md:hidden">
+						<Menu as="div" className="relative ml-3 md:hidden">
 							<div>
-								<MenuButton className="relative flex rounded-full bg-[#444370] text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#444370] focus:outline-hidden">
+								<MenuButton className="relative flex rounded-full bg-[#f2f7fa] text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#ffffff] focus:outline-hidden"> 
 									<span className="absolute -inset-1.5" />
 									<span className="sr-only">Open Mobile Nav</span>
 									<img
@@ -44,7 +43,7 @@ const Navbar = () => {
 									<a
 										href="#"
 										onClick={() => navigate(("/"))}
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden" 
 									>
 										Home
 									</a>
@@ -53,7 +52,7 @@ const Navbar = () => {
 									<a
 										href="#"
 										onClick={() => navigate(("/product"))}
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden"
 									>
 										Product
 									</a>
@@ -62,7 +61,7 @@ const Navbar = () => {
 									<a
 										href="#"
 										onClick={() => navigate(("/recipes"))}
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden"
 									>
 										Recipes
 									</a>
@@ -71,16 +70,16 @@ const Navbar = () => {
 									<a	
 										href="#"
 										onClick={() => navigate(("/comments"))}
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden" 
 									>
-										Carts
+										Comments
 									</a>
 								</MenuItem>
 								<MenuItem>
 									<a
 										href="#"
 										onClick={() => navigate(("/posts"))}
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden" 
 									>
 										Post
 									</a>
@@ -88,7 +87,7 @@ const Navbar = () => {
 							</MenuItems>
 						</Menu>
 						<div className="hidden md:flex shrink-0 items-center">
-							<button className="hover:bg-[#444370] p-1 rounded-full focus:bg-[#212142]" onClick={() => navigate(("/"))}>
+							<button className="hover:bg-[#3498DB] p-1 rounded-full focus:bg-[#1F8C9C]" onClick={() => navigate(("/"))}> 
 								<img
 									alt="Your Company"
 									src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
@@ -102,7 +101,7 @@ const Navbar = () => {
 									<NavLink to={item.to} key={item.name}
 										className={({isActive}) => {
 												return classNames(
-													isActive ? 'bg-[#212142] text-white' : 'text-gray-300 hover:bg-[#444370] hover:text-white',
+													isActive ? 'bg-[#1F8C9C] text-white' : 'text-black hover:bg-[#3498DB] hover:text-white',
 													'rounded-md px-3 py-2 text-sm font-medium',
 												)
 										}}>
@@ -115,7 +114,7 @@ const Navbar = () => {
 					<div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 						<button
 							type="button"
-							className="relative rounded-full bg-[#444370] p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#444370] focus:outline-hidden"
+							className="relative rounded-full bg-[#3498DB] p-1 text-white hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#3498DB] focus:outline-hidden" 
 						>
 							<span className="absolute -inset-1.5" />
 							<span className="sr-only">View notifications</span>
@@ -125,7 +124,7 @@ const Navbar = () => {
 						{/* Profile dropdown */}
 						<Menu as="div" className="relative ml-3">
 							<div>
-								<MenuButton className="relative flex rounded-full bg-[#444370] text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#444370] focus:outline-hidden">
+								<MenuButton className="relative flex rounded-full bg-[#3498DB] text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#3498DB] focus:outline-hidden">
 									<span className="absolute -inset-1.5" />
 									<span className="sr-only">Open user menu</span>
 									<img
@@ -142,7 +141,7 @@ const Navbar = () => {
 								<MenuItem>
 									<a
 										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden" 
 									>
 										Your Profile
 									</a>
@@ -150,7 +149,7 @@ const Navbar = () => {
 								<MenuItem>
 									<a
 										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden" 
 									>
 										Settings
 									</a>
@@ -158,7 +157,7 @@ const Navbar = () => {
 								<MenuItem>
 									<a
 										href="#"
-										className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+										className="block px-4 py-2 text-sm text-black data-focus:bg-gray-100 data-focus:outline-hidden" 
 									>
 										Sign out
 									</a>
@@ -172,4 +171,4 @@ const Navbar = () => {
 	)
 }
 
-export default Navbar
+export default Navbar;

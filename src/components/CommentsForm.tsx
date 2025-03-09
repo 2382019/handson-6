@@ -31,14 +31,14 @@ const CommentForm: React.FC<CommentFormProps> = ({ isEdit, mutateFn, defaultInpu
   };
 
   return (
-    <form className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-300" onSubmit={handleSubmit(onSubmit)}>
+    <form className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg border border-white" onSubmit={handleSubmit(onSubmit)}>
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">{isEdit ? "Edit Comment" : "Add New Comment"}</h2>
 
       <div className="space-y-4">
         <div>
           <label className="block text-gray-700 font-semibold" htmlFor="userId">User ID</label>
           <input
-            className="w-full p-3 rounded-lg border border-gray-300 focus:ring focus:ring-blue-400"
+            className="w-full p-3 rounded-lg border border-white focus:ring focus:ring-blue-400"
             type="number"
             id="userId"
             {...register("userId", { required: "User ID is required." })}
@@ -49,7 +49,7 @@ const CommentForm: React.FC<CommentFormProps> = ({ isEdit, mutateFn, defaultInpu
         <div>
           <label className="block text-gray-700 font-semibold" htmlFor="body">Comment</label>
           <textarea
-            className="w-full p-3 rounded-lg border border-gray-300 focus:ring focus:ring-blue-400"
+            className="w-full p-3 rounded-lg border border-white focus:ring focus:ring-blue-400"
             id="body"
             rows={4}
             {...register("body", { required: "Comment cannot be empty." })}

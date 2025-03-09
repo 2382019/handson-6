@@ -38,7 +38,7 @@ const AddPost = () => {
   }, [isSuccess]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="relative w-full max-w-lg p-8 bg-white shadow-lg rounded-lg">
         {isPending && (
           <div className="absolute inset-0 bg-white/50 backdrop-blur-sm z-10 flex items-center justify-center">

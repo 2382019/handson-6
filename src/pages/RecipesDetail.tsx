@@ -143,7 +143,7 @@ const RecipesDetail = () => {
   }, [deleteRecipeMutation.isSuccess, navigate]);
 
   return (
-    <div className="relative min-h-screen bg-gray-50 p-6">
+    <div className="relative min-h-screen bg-white p-6">
       {getRecipeDetails.isFetching || recipe === undefined ? (
         <RecipeDetailSkeleton />
       ) : (
