@@ -13,7 +13,7 @@ import {
   import ProductDetail from "./pages/ProductDetail";
   import Home from "./pages/Home";
   import AddProduct from "./pages/AddProduct";
-  import AddPost from "./pages/addPost";
+  import AddPost from "./pages/AddPost";
   import AddRecipes from "./pages/AddRecipes";
   import RecipesDetail from "./pages/RecipesDetail";
   import Todos from "./pages/Todos";
